@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teacher and Student login page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(360deg, #070707, #f6f6f7);
+      height: 100vh;
+      display: flex;
+
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 550px;
+      margin-top: 5%;
+      height: 10%;
+    }
+
+    .login-container:hover {
+      box-shadow: 10px 10px 10px black;
+    }
+
+    .login-container h2 {
+      margin-top: 20px;
+      margin-bottom: 2px;
+      color: #333;
+    }
+
+    .toggle-container {
+      position: relative;
+      padding: 0px;
+      width: 400px;
+      margin: 50px auto;
+      font-family: cursive;
+      font-size: 1.8rem;
+      margin-top: 16px;
+      color: black;
+
+    }
+
+    .form-container {
+      display: none;
+    }
+
+    .form-container.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: inline;
+      margin-bottom: 8px;
+      color: #444;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      outline: none;
+      transition: border 0.3s;
+
+    }
+
+    .form-group input:focus {
+      border-color: #131212;
+    }
+
+    .form-container {
+      position: absolute;
+      top: 0px;
+      left: 50;
+      margin-left: 400px;
+      margin: 0 auto;
+      font-size: 1.5em;
+      font-weight: bold;
+      max-width: 600px;
+    }
+
+    .form-container h2 {
+      margin-top: 86px;
+      margin-left: 100px;
+    }
+
+    .ab {
+      border: 2px solid black;
+      width: 10%;
+      text-align: center;
+      border-radius: 20px;
+      color: rgb(19, 18, 18);
+    }
+
+    label.switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    label.switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked+.slider {
+      background-color: #080808;
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(26px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+  <h1><marquee>Registration form</marquee></h1>
+</div>
+
+  <div class="toggle-container">
+    <label>Student</label>
+    <label class="switch">
+      <input type="checkbox" id="toggleSwitch">
+      <span class="slider"></span>
+    </label>
+    <label>Teacher</label>
+  </div>
+
+  <div id="studentform" class="form-container active">
+    <h2>Student Details</h2>
+    <div class="login-container">
+      <form method="post">
+        <div class="form-group">
+          <label>Enter your first name</label>
+          <input type="text" name="nm" placeholder="enter your first name">
+        </div>
+        <div class="form-group">
+          <label>Enter your last name</label>
+          <input type="text" name="nm" placeholder="enter your last name">
+        </div>
+        <div class="form-group">
+          <label>Enter your religion</label>
+          <input type="text" name="rs">
+        </div>
+        <div class="form-group">
+          <label>Enter your email</label>
+          <input type="email" name="em">
+        </div>
+        <div class="form-group">
+          <label>Enter your mobile number</label>
+          <input type="mobile" name="mb">
+        </div>
+        <div class="form-group">
+          <label>Enter your address</label>
+          <textarea name="textarea"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Select your gender</label>
+          <input type="radio" name="gn" value="male">Male<input type="radio" name="gn" value="female">female
+        </div>
+        <div class="form-group">
+          <label>Select your DOB</label>
+          <input type="date" name="nm">
+        </div>
+        <div class="form-group">
+          <label>Select your country</label>
+          <select name="sel">
+            <option value="Ind">India</option>
+            <option value="uk">United Kingdom</option>
+            <option value="Rus">Russia</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Upload your pic</label></td>
+          <input type="file" name="cf">
+          <input type="submit" name="sub" value="save my data"><input type="reset" name="rs">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="teacherform" class="form-container active">
+    <h2>Teacher's Details</h2>
+    <div class="login-container">
+    <form>
+      <div class="form-group">
+        <label>Enter your first<br>name</label>
+        <input type="text" name="nm" placeholder="Enter your first name">
+      </div>
+      <div class="form-group">
+        <label>Enter your last<br>name</label>
+        <input type="text" name="nm" placeholder="Enter your last name">
+      </div>
+      <div class="form-group">
+        <label>Enter your address</label>
+        <textarea name="textarea"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Select your gender</label>
+        <input type="radio" name="gn" value="male">Male<input type="radio" name="gn" value="female">female
+      </div>
+      <div class="form-group">
+        <label>Select your Qualification</label>
+        <select name="sel">
+          <option value="bac">Bachelor's</option>
+          <option value="mas">Master's</option>
+          <option value="twe">12th</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Select your Location</label>
+        <select name="sel">
+          <option value="shi">Shimla</option>
+          <option value="chd">Chandigarh</option>
+          <option value="del">Delhi</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Upload your pic</label></td>
+        <input type="file" name="cf">
+        <input type="submit" name="sub" value="save my data"><input type="reset" name="rs">
+      </div>
+
+      <div class="form-group">
+        <button
+          style=" margin: left 200px; text-align:  center; border: 2px solid black; border-radius: 5px; background-color: black; color: white;">Login</button>
+      </div>
+    </div>
+    </form>
+  </div>
+
+  <button style="margin-top: 20%; margin-left: 550px; bottom: 0; position: fixed;"><a
+      href="School_login_page.html">Click here redirecting to the first page</a></button>
+
+
+  <script>
+    const toggleSwitch = document.getElementById('toggleSwitch');
+    const studentForm = document.getElementById('studentform');
+    const teacherForm = document.getElementById('teacherform');
+
+    toggleSwitch.addEventListener('change', function () {
+      if (this.checked) {
+        teacherForm.classList.add('active');
+        studentForm.classList.remove('active');
+      } else {
+        teacherForm.classList.remove('active');
+        studentForm.classList.add('active');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
